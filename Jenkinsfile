@@ -6,9 +6,14 @@ pipeline {
         bat 'npm install'
       }
     }
+    stage('Linter'){
+          steps {
+            bat 'npm run lint'
+          }
+        }
     stage('Launch tests'){
       steps {
-        bat 'npm run test'
+        bat 'npm run custom-tests'
       }
     }
   }
