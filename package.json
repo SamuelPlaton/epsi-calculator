@@ -25,7 +25,7 @@
   "scripts": {
     "start": "NODE_ENV=production node app.js",
     "lint": "eslint **/*/*.js --max-warnings=0 --fix && echo 'Linted'",
-    "test": "set JUNIT_REPORT_PATH=report.xml && mocha --reporter mocha-jenkins-reporter --ui bdd tests/lifecycle.test.js tests/fixtures/**/*.test.js && echo 'Tested'"
+    "test": "JUNIT_REPORT_PATH=report.xml mocha --reporter mocha-jenkins-reporter --ui bdd tests/lifecycle.test.js tests/fixtures/**/*.test.js && echo 'Tested'"
   },
   "main": "app.js",
   "repository": {
