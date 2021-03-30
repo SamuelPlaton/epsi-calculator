@@ -15,7 +15,6 @@ pipeline {
       steps {
         bat 'npm run test'
         bat 'npm run coverage'
-        junit 'tests/results/report.xml'
         junit 'tests/coverage/cobertura-coverage.xml'
       }
     }
