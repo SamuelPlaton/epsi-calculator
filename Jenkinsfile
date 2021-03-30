@@ -18,13 +18,13 @@ pipeline {
     }
     stage('Display tests'){
           steps {
-            junit 'test-results.xml'
+            junit 'report.xml'
           }
         }
   }
   post {
         always {
-          junit 'tests/**/*.xml'
+          junit 'report.xml'
         }
       }
 }
