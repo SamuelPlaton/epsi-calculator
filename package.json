@@ -18,14 +18,13 @@
     "assert": "^2.0.0",
     "eslint": "5.16.0",
     "mocha": "^8.3.1",
-    "mocha-jenkins-reporter": "^0.4.5",
     "mocha-junit-reporter": "^2.0.0",
     "sinon": "^9.2.4"
   },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
     "lint": "eslint **/*/*.js --max-warnings=0 --fix && echo 'Linted'",
-    "test": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=report.xml --ui bdd tests/lifecycle.test.js tests/fixtures/**/*.test.js && echo 'Tested'"
+    "test": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=./tests/results/report.xml --ui bdd tests/lifecycle.test.js tests/fixtures/**/*.test.js && echo 'Tested'"
   },
   "main": "app.js",
   "repository": {
