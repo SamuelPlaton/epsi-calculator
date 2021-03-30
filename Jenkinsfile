@@ -16,5 +16,10 @@ pipeline {
         bat 'npm run test'
       }
     }
+    post {
+      always {
+        junit './tests/results/test-results.xml'
+      }
+    }
   }
 }
