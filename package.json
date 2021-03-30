@@ -26,7 +26,7 @@
     "start": "NODE_ENV=production node app.js",
     "lint": "eslint **/*/*.js --max-warnings=0 --fix && echo 'Linted'",
     "test": "mocha --reporter mocha-junit-reporter --reporter-options mochaFile=tests/results/report.xml --ui bdd tests/lifecycle.test.js tests/fixtures/**/*.test.js && echo 'Tested'",
-    "coverage": "nyc --reporter=cobertura --reporter=text-summary --report-dir=./tests/coverage npm run test"
+    "coverage": "nyc --reporter=html --reporter=text-summary --report-dir=./tests/coverage npm run test"
   },
   "main": "app.js",
   "repository": {

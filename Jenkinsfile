@@ -20,7 +20,15 @@ pipeline {
     stage('handle Tests coverage'){
       steps {
         bat 'npm run coverage'
-        junit 'tests/coverage/cobertura-coverage.xml'
+        // publish html
+                publishHTML target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'tests/coverage',
+                    reportFiles: 'index.html',
+                    reportName: 'Test coverage report'
+                  ]
       }
     }
   }
