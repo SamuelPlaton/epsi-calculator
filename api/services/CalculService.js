@@ -28,4 +28,4 @@ module.exports = {
     return CalculService.multiplication(a, a);
   }
 
-}
+};
