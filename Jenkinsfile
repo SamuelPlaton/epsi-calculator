@@ -16,6 +16,11 @@ pipeline {
         bat 'npm run test'
       }
     }
+    stage('Display tests'){
+          steps {
+            junit 'test-results.xml'
+          }
+        }
   }
   post {
         always {
