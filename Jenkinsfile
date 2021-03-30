@@ -14,21 +14,17 @@ pipeline {
     stage('Launch tests'){
       steps {
         bat 'npm run test'
-        junit 'tests/results/report.xml'
-      }
-    }
-    stage('handle Tests coverage'){
-      steps {
         bat 'npm run coverage'
-        // publish html
-                publishHTML target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: 'tests/coverage',
-                    reportFiles: 'index.html',
-                    reportName: 'Test coverage report'
-                  ]
+        junit 'tests/results/report.xml'
+        // publish html coverage
+        publishHTML target: [
+          allowMissing: false,
+          alwaysLinkToLastBuild: false,
+          keepAll: true,
+          reportDir: 'tests/coverage',
+          reportFiles: 'index.html',
+          reportName: 'Test coverage report'
+        ]
       }
     }
   }
