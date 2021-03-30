@@ -13,7 +13,7 @@ pipeline {
         }
     stage('Launch tests'){
       steps {
-        bat 'npm run custom-tests'
+        bat 'npm run test'
       }
     }
   }
